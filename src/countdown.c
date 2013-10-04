@@ -31,7 +31,7 @@
 #define APP_UUID { 0x27, 0x9D, 0xBE, 0xC4, 0x87, 0xBB, 0x42, 0xCB, 0x9B, 0x7E, 0x11, 0x9A, 0xAD, 0xA2, 0xD1, 0xEE }
 #define APP_TYPE APP_INFO_WATCH_FACE
 
-PBL_APP_INFO(APP_UUID, "Countdown Face", "Matthew Congrove", 1, 0, RESOURCE_ID_IMAGE_MENU_ICON, APP_TYPE);
+PBL_APP_INFO(APP_UUID, "Countdown Face", "Matthew Congrove", 1, 0, RESOURCE_ID_IMAGE_MENU_ICON, APP_INFO_WATCH_FACE);
 
 Window window_root;
 TextLayer label_time;
@@ -64,7 +64,7 @@ bool calculate_countdown() {
 	
 	event.tm_year = EVENT_YEAR - 1900;
 	event.tm_mon = EVENT_MONTH - 1;
-	event.tm_mday = EVENT_DAY;
+	event.tm_mday = EVENT_DAY + 1;
 	event.tm_hour = EVENT_HOUR;
 	event.tm_min = EVENT_MINUTE;
 	event.tm_sec = EVENT_SECOND;
